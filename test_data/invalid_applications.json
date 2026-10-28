@@ -1,0 +1,157 @@
+[
+  {
+    "payload": {
+      "applicant_id": "APP-2001",
+      "monthly_income": 85000.0,
+      "employment_status": "salaried",
+      "requested_amount": 150000.0,
+      "tenure_months": 36,
+      "email": "applicant03@example.com"
+    },
+    "expected_error_field": "age",
+    "expected_error_code": "required"
+  },
+  {
+    "payload": {
+      "applicant_id": "APP-2002",
+      "age": 19,
+      "monthly_income": 85000.0,
+      "employment_status": "salaried",
+      "requested_amount": 150000.0,
+      "tenure_months": 36,
+      "email": "applicant04@example.com"
+    },
+    "expected_error_field": "age",
+    "expected_error_code": "out_of_range"
+  },
+  {
+    "payload": {
+      "applicant_id": "APP-2003",
+      "age": 65,
+      "monthly_income": 120000.0,
+      "employment_status": "salaried",
+      "requested_amount": 150000.0,
+      "tenure_months": 36,
+      "email": "applicant05@example.com"
+    },
+    "expected_error_field": "age",
+    "expected_error_code": "out_of_range"
+  },
+  {
+    "payload": {
+      "applicant_id": "APP-2004",
+      "age": 34,
+      "monthly_income": 5000.0,
+      "employment_status": "salaried",
+      "requested_amount": 150000.0,
+      "tenure_months": 36,
+      "email": "applicant06@example.com"
+    },
+    "expected_error_field": "monthly_income",
+    "expected_error_code": "out_of_range"
+  },
+  {
+    "payload": {
+      "applicant_id": "APP-2005",
+      "age": 34,
+      "monthly_income": -1000.0,
+      "employment_status": "salaried",
+      "requested_amount": 150000.0,
+      "tenure_months": 36,
+      "email": "applicant07@example.com"
+    },
+    "expected_error_field": "monthly_income",
+    "expected_error_code": "out_of_range"
+  },
+  {
+    "payload": {
+      "applicant_id": "APP-2006",
+      "age": 34,
+      "monthly_income": 85000.0,
+      "employment_status": "salaried",
+      "requested_amount": 0.0,
+      "tenure_months": 36,
+      "email": "applicant08@example.com"
+    },
+    "expected_error_field": "requested_amount",
+    "expected_error_code": "out_of_range"
+  },
+  {
+    "payload": {
+      "applicant_id": "APP-2007",
+      "age": 34,
+      "monthly_income": 85000.0,
+      "employment_status": "salaried",
+      "requested_amount": 600000.0,
+      "tenure_months": 36,
+      "email": "applicant09@example.com"
+    },
+    "expected_error_field": "requested_amount",
+    "expected_error_code": "out_of_range"
+  },
+  {
+    "payload": {
+      "applicant_id": "APP-2008",
+      "age": 34,
+      "monthly_income": 85000.0,
+      "employment_status": "salaried",
+      "requested_amount": 150000.0,
+      "tenure_months": 34,
+      "email": "applicant10@example.com"
+    },
+    "expected_error_field": "tenure_months",
+    "expected_error_code": "out_of_range"
+  },
+  {
+    "payload": {
+      "applicant_id": "APP-2009",
+      "age": 34,
+      "monthly_income": 85000.0,
+      "employment_status": "salaried",
+      "requested_amount": 150000.0,
+      "tenure_months": 120,
+      "email": "applicant11@example.com"
+    },
+    "expected_error_field": "tenure_months",
+    "expected_error_code": "out_of_range"
+  },
+  {
+    "payload": {
+      "applicant_id": "APP-2010",
+      "age": 34,
+      "monthly_income": 85000.0,
+      "employment_status": "salaried",
+      "requested_amount": 150000.0,
+      "tenure_months": 36,
+      "email": "not-an-email-address"
+    },
+    "expected_error_field": "email",
+    "expected_error_code": "invalid_format"
+  },
+  {
+    "payload": {
+      "applicant_id": "APP-2011",
+      "age": 34,
+      "monthly_income": 85000.0,
+      "employment_status": "unemployed",
+      "requested_amount": 150000.0,
+      "tenure_months": 36,
+      "email": "applicant12@example.com"
+    },
+    "expected_error_field": "employment_status",
+    "expected_error_code": "unsupported_value"
+  },
+  {
+    "payload": {
+      "applicant_id": "APP-2012",
+      "age": 34,
+      "monthly_income": 20000.0,
+      "employment_status": "salaried",
+      "requested_amount": 80000.0,
+      "tenure_months": 36,
+      "email": "applicant13@example.com"
+    },
+    "expected_error_field": "requested_amount",
+    "expected_error_code": "affordability_exceeded"
+  }
+]
